@@ -23,10 +23,21 @@ function displayBoard()
       index=$(($index+3))
    done
 }
+function cellSelection(){
+   echo "Select cell number to insert your symbol from 0-9"
+   read cellNum
+   if [ ${board[$cellNum]} == $NULL ]
+   then
+      echo "cell is free can take the input"
+   else
+      echo "check for empty cell"
+   fi
+}
 function TicTacToeGame(){
    createBoard
 	assignLetterXOrO
 	displayBoard
+	cellSelection
 }
 TicTacToeGame
 
