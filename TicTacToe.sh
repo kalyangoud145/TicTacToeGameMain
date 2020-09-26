@@ -9,8 +9,13 @@ function createBoard()
       board[$index]=$NULL
    done
 }
+function assignLetterXOrO(){
+   read -p "Enter player choice X or O: " playerSymbol
+   read -p "Enter computer choice X or O: " computerSymbol
+}
 function TicTacToeGame(){
    createBoard
+	assignLetterXOrO
 }
 TicTacToeGame
 
