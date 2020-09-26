@@ -13,9 +13,20 @@ function assignLetterXOrO(){
    read -p "Enter player choice X or O: " playerSymbol
    read -p "Enter computer choice X or O: " computerSymbol
 }
+function displayBoard()
+{
+   local index=1
+   for (( j=0; j<3; j++ ))
+   do
+      echo "|---|---|---|"
+      echo "| "${board[$index]}" | "${board[$index+1]}" | "${board[$index+2]}" |"
+      index=$(($index+3))
+   done
+}
 function TicTacToeGame(){
    createBoard
 	assignLetterXOrO
+	displayBoard
 }
 TicTacToeGame
 
